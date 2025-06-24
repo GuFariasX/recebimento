@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Recebimentos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Recebimentos</h1>
+  </header>
+
+  <nav>
+    <button onclick="mostrarTela('cadastroFornecedor')">Cadastrar Fornecedor</button>
+    <button onclick="mostrarTela('registroRecebimento')">Registrar Recebimento</button>
+    <button onclick="mostrarTela('consultaRecebimentos')">Consultar Recebimentos</button>
+  </nav>
+
+  <main>
+    <section id="cadastroFornecedor" class="tela card">
+    <h2>Cadastrar Fornecedor</h2>
+      <input id="razaoSocial" maxlength="100" placeholder="Razão Social" required>
+      <input id="nomeFantasia" maxlength="40" placeholder="Nome Fantasia">
+      <input id="cnpj" placeholder="CNPJ" required>
+      <input id="telefone" placeholder="Telefone">
+      <input id="endereco" placeholder="Endereço">
+      <input id="email" type="email" placeholder="E-mail">
+      <input id="representante" placeholder="Representante Comercial">
+      <button onclick="cadastrarFornecedor()">Cadastrar</button>
+    </section>
+
+    <section id="registroRecebimento" class="tela hidden card">
+      <h2>Registrar Recebimento</h2>
+      <input id="idFornecedor" placeholder="ID do fornecedor">
+      <input id="valor" placeholder="Valor" type="number">
+      <input id="data" type="date">
+      <input id="descricao" placeholder="Descrição">
+      <button onclick="registrarRecebimento()">Registrar</button>
+    </section>
+
+    <section id="consultaRecebimentos" class="tela hidden card">
+      <h2>Consulta de Recebimentos</h2>
+      <button onclick="listarRecebimentos()">Atualizar Lista</button>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Fornecedor</th>
+            <th>Valor</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaRecebimentos"></tbody>
+      </table>
+    </section>
+  </main>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
